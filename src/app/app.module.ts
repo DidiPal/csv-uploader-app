@@ -1,18 +1,24 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CsvUploaderComponent } from './csv-uploader/csv-uploader.component';
+import { CsvUploaderService } from './services/csv-uploader.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CsvUploaderComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [CsvUploaderService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
